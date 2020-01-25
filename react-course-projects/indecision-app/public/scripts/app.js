@@ -1,6 +1,8 @@
 console.log("app.js is running");
 //JSX is JavaScript XML
 // var template = <p>This is JSX from app.js</p>;
+// yarn init
+// yarn add babel-preset-react@6.24.1 babel-preset-env@1.5.2
 var template = React.createElement(
     "h1", 
     {id: "someid"}, 
