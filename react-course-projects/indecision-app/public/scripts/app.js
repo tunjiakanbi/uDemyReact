@@ -1,19 +1,29 @@
-"use strict";
+'use strict';
 
 console.log("app.js is running");
 //JSX is JavaScript XML
-var template = React.createElement(
-    "div",
+var appObject = {
+    title: 'Indecision App',
+    subtitle: 'Put your life in the hands of a computer'
+};
+//  var template = (
+//      <div>
+//      <h1 id="someid">Indecision App</h1>
+//      <p>This is some text</p>
+//      </div>
+//  );
+var templateOne = React.createElement(
+    'div',
     null,
     React.createElement(
-        "h1",
-        { id: "someid" },
-        "Indecision App"
+        'h1',
+        { id: 'someid' },
+        appObject.title
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "This is some text"
+        appObject.subtitle
     )
 );
 // yarn init
@@ -23,7 +33,8 @@ var template = React.createElement(
 //     "h1", 
 //     {id: "someid"}, 
 //     "This is JSX from app.js");
-var appRoot = document.getElementById('app');
+var appRoot1 = document.getElementById('app1');
+var appRoot2 = document.getElementById('app2');
 // ReactDOM.render(template, appRoot);
 // var userName = 'Tunji Akanbi';
 // var userAge = 32;
@@ -34,6 +45,13 @@ var user = {
     age: 42,
     location: 'Rosemount, MN'
 };
+function getLocation(location) {
+    if (location) {
+        return location;
+    } else {
+        return 'Unknown';
+    }
+}
 var templateTwo =
 // <div>
 // <h1>{userName}</h1>
@@ -42,26 +60,26 @@ var templateTwo =
 // </div>
 
 React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
         user.name
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Age: ",
+        'Age: ',
         user.age
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Location: ",
-        user.location
+        'Location: ',
+        getLocation(user.location)
     )
 );
-
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(templateOne, appRoot1);
+ReactDOM.render(templateTwo, appRoot2);
 console.log("app.js fixed");
